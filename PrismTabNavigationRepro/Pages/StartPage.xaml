@@ -1,10 +1,19 @@
 ﻿<?xml version="1.0" encoding="UTF-8"?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="PrismTabNavigationRepro.Pages.StartPage">
     <ContentPage.Content>
-        <StackLayout Spacing="20" VerticalOptions="Center" HorizontalOptions="Center">
-            <Label Text="Run the repro on iOS" FontSize="12"/>
-            <Label Text="Run the following command in the terminal" FontSize="12"/>
-            <Label Text="xcrun simctl openurl booted 'deeplink://showdetailspage'" FontSize="12"/>
+        <StackLayout VerticalOptions="Center" Spacing="40">
+            <StackLayout VerticalOptions="Center" Padding="20, 0, 20, 0">
+                <Label Text="iOS" FontSize="20"/>
+                <Label Text="Run the following command in the terminal:" FontSize="12"/>
+                <Label Text="xcrun simctl openurl booted 'deeplink://showdetailspage/13'" FontSize="12"/>
+            </StackLayout>
+
+            <StackLayout VerticalOptions="Center" Padding="20, 0, 20, 0">
+                <Label Text="Android" FontSize="20"/>
+                <Label Text="Run the following command in the terminal:" FontSize="12"/>
+                <Label Text="adb -s &lt;NameOfEmulator&gt;  shell am start -a android.intent.action.VIEW -d &quot;deeplink://showdetailspage/13&quot; test.prismtabnavigationrepro" FontSize="12"/>
+            </StackLayout>
+
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>
